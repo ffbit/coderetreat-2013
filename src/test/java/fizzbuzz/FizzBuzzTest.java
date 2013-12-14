@@ -1,5 +1,6 @@
 package fizzbuzz;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -7,27 +8,30 @@ import static org.junit.Assert.assertThat;
 
 public class FizzBuzzTest {
 
+    private FizzBuzz fizzbuzz;
+
+    @Before
+    public void setUp() throws Exception {
+        fizzbuzz = new FizzBuzz();
+    }
+
     @Test
     public void itShouldReturn1For1() throws Exception {
-        FizzBuzz fizzbuzz = new FizzBuzz();
         assertThat(fizzbuzz.getHint(1), is("1"));
     }
 
     @Test
     public void itShouldReturnFizzFor3() throws Exception {
-        FizzBuzz fizzbuzz = new FizzBuzz();
         assertThat(fizzbuzz.getHint(3), is("fizz"));
     }
 
     @Test
     public void itShouldReturnBuzzFor5() throws Exception {
-        FizzBuzz fizzbuzz = new FizzBuzz();
         assertThat(fizzbuzz.getHint(5), is("buzz"));
     }
 
     @Test
     public void itShouldReturnFizzbuzzFor15() throws Exception {
-        FizzBuzz fizzbuzz = new FizzBuzz();
         assertThat(fizzbuzz.getHint(15), is("fizzbuzz"));
     }
 
