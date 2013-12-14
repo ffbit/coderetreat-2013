@@ -83,10 +83,10 @@ public class GameOfLife2Test {
     }
 
 
-    private class GameOfLife {
+    public static class GameOfLife {
         private boolean[][] field;
 
-        private GameOfLife(boolean[][] field) {
+        public GameOfLife(boolean[][] field) {
             this.field = field;
         }
 
@@ -107,7 +107,7 @@ public class GameOfLife2Test {
                 }
             }
 
-            System.out.println(Arrays.deepToString(next));
+            field = next;
 
             return next;
         }
